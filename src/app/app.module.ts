@@ -7,6 +7,9 @@ import { UserComponent } from './user/user.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormBuilder, FormsModule } from '@angular/forms';
+import { UserService } from './shared/user.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,11 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [UserService,FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
